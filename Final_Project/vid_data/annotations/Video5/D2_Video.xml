@@ -1,0 +1,26 @@
+<annotation>
+	<folder>distance_measure</folder>
+	<filename>D2_Video.png</filename>
+	<path>/Users/PhillipVetter/dev/Advanced_Image_Analysis_02503/Final_Project/vid_data/distance_measure/D2_Video.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>all</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>825</xmin>
+			<ymin>433</ymin>
+			<xmax>1080</xmax>
+			<ymax>686</ymax>
+		</bndbox>
+	</object>
+</annotation>
