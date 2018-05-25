@@ -235,7 +235,7 @@ def find_distance(image, xmax, xmin, ymax, ymin):
 
     return 0.1168 / r
 
-def plot_points(points, image, roll):
+def plot_points(points, image, roll, lw, rx, ry):
     """
     :param points: [x_cord [m], y_cord [m], distance [m]]
     :param image: image [h, w, 3]
@@ -262,10 +262,16 @@ def plot_points(points, image, roll):
     z = pd.DataFrame(z)
     z = np.array(z.rolling(roll).mean()).flatten()
 
+    y = pd.DataFrame(y)
+    y = np.array(y.rolling(ry).mean()).flatten()
+
+    x = pd.DataFrame(x)
+    x = np.array(x.rolling(rx).mean()).flatten()
+
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
-    ax.plot(x, y, z, '-b', zdir = 'y', label='3D Estimate')
+    ax.plot(x, y, z, '-b', zdir = 'y', label='3D Estimate', linewidth=lw)
 
     z_min = np.min(z[~np.isnan(z)])
     z_max = np.max(z[~np.isnan(z)])
@@ -341,12 +347,16 @@ def detect_vid(video, fraction):
                   point = calculate_3d_cord(boxes[0][0], image_np_org)
                   points.append([point["center_x"], point["center_y"], point["d"]])
                   print(point)
+                  if count % 4 == 0:
+                      #pass
+                      cv2.imwrite("detections/" + video[16:-4] + "_{}".format(count) + ".png",
+                                  image_np_org)
               cv2.imshow('object detection', cv2.resize(image_np_org, (1200,800)))
               if cv2.waitKey(25) & 0xFF == ord('q'):
                 cv2.destroyAllWindows()
                 break
 
-        plot_points(points, image_np_org, 12)
+        plot_points(points, image_np_org, 12, 3, 2, 2)
         cap.release()
         cv2.destroyAllWindows()
         
