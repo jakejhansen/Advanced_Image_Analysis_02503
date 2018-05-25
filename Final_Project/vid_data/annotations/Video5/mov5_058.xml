@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Mov5</folder>
+	<filename>mov5_058.png</filename>
+	<path>/Users/PhillipVetter/dev/Advanced_Image_Analysis_02503/Final_Project/vid_data/images/Mov5/mov5_058.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Ball</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>774</xmin>
+			<ymin>392</ymin>
+			<xmax>857</xmax>
+			<ymax>479</ymax>
+		</bndbox>
+	</object>
+</annotation>
